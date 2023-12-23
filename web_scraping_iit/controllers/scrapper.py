@@ -60,7 +60,7 @@ def download_image(url, folder_path, book_name):
 
     response = requests.get(url)
     if response.status_code == 200:
-        image_filename = f"{book_name}.jpg"  # Utilisation du nom du livre pour renommer l'image
+        image_filename = f"{book_name}.jpg"
         image_path = os.path.join(folder_path, image_filename)
         with open(image_path, 'wb') as file:
             file.write(response.content)
@@ -91,4 +91,4 @@ class CategoryScraper:
                 BookScraper(all_cat_url, a.get_text().strip())
 
     def get_all_cat_book_data(self, urls):
-        pass  # Actuellement non utilisé
+        pass
